@@ -1,2 +1,2 @@
-# Java-new-project
+# Java-Project
 numberguessing
