@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class Student {
+    String rollNo;
+    String name;
+    int m1, m2, m3;
+    int total;
+    double average;
+    char grade;
+
+    void calculate() {
+        total = m1 + m2 + m3;
+        average = total / 3.0;
+
+        if (average >= 75)
+            grade = 'A';
+        else if (average >= 60)
+            grade = 'B';
+        else if (average >= 50)
+            grade = 'C';
+        else
+            grade = 'F';
+    }
+
+    void display() {
+        System.out.println("\n--- Student Result ---");
+        System.out.println("Roll No : " + rollNo);
+        System.out.println("Name    : " + name);
+        System.out.println("Total   : " + total);
+        System.out.println("Average : " + average);
+        System.out.println("Grade   : " + grade);
+    }
+}
+
+public class Student_Result_Management {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student s = new Student();
+
+        System.out.print("Enter Roll Number: ");
+        s.rollNo = sc.nextLine();
+        sc.nextLine();
+        System.out.print("Enter Name: ");
+        s.name = sc.next();
+        System.out.print("Enter Marks 1: ");
+        s.m1 = sc.nextInt();
+        System.out.print("Enter Marks 2: ");
+        s.m2 = sc.nextInt();
+        System.out.print("Enter Marks 3: ");
+        s.m3 = sc.nextInt();
+
+        s.calculate();
+        s.display();
+
+        sc.close();
+    }
+}
